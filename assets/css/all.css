@@ -1,0 +1,41 @@
+.nv-block {
+    height:  100px;
+    width: 250px;
+    margin-top: 600px;
+    background-color: #873f3d;
+    display:  flex;
+    flex-flow:  column;
+    padding:  20px;
+    align-items:  center;
+}
+.nv-title {
+    font-size:  18px;
+    color:  #fff;
+    opacity:  .8;
+}
+.nv-inner {
+    text-align:  start;
+    white-space: pre-line;
+}
+.nv-old {
+    font-size:  24px;
+    color: #fff;
+    opacity:  .8;
+}
+.nv-cross {
+    position:  absolute;
+    height: 3px;
+    width: 100%;
+    background-color:  #fff;
+    top: 43%;
+    left: 0;
+}
+.nv-crossed {
+    position: relative;
+}
+.nv-new {
+    font-size:  32px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 1;
+}
