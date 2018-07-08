@@ -5,6 +5,7 @@
     <title>Title</title>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
     </script>
+    <script src="https://unpkg.com/osme"></script>
 </head>
 <body>
     <div id="map" style="width: 100vw; height: 100vh"></div>
@@ -25,6 +26,7 @@
             // от 0 (весь мир) до 19.
             zoom: 7
         });
+        osme.geoJSON('RU:VLG').then( geojson => osme.toYandex(geojson).add(myMap));
     }
 </script>
 </html>
