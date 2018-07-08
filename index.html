@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>Test Stand</title>
     <link rel="stylesheet" href="/assets/css/all.css">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 </head>
 <body>
-<div class="nv-block">
+
+<div id="map" style="width:500px; height:400px"></div>
+<div class="nv-block" style="display: none">
     	<span class="nv-title">Стоимость курса:</span>
         <div class="nv-inner">
             <span class="nv-old"><span class="nv-crossed">1231<div class="nv-cross"></div></span>&nbsp;₽ </span>
@@ -14,4 +17,14 @@
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [54.98, 82.89],
+            zoom: 13
+        });
+    });
+</script>
 </html>
