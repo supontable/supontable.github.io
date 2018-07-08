@@ -26,7 +26,7 @@
             // от 0 (весь мир) до 19.
             zoom: 7
         });
-        osme.geoJSON('RU:VLG').then( geojson => osme.toYandex(geojson).add(myMap));
     }
+    osme.geoJSON('RU:VLG').then( geojson => osme.toYandex(geojson).add(myMap));
 </script>
 </html>
