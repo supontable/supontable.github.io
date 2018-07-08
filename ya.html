@@ -11,24 +11,30 @@
     <div id="map" style="width: 100vw; height: 100vh"></div>
 </body>
 <script type="text/javascript">
-    // Функция ymaps.ready() будет вызвана, когда
-    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+
+    var myMap;
+
     ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        var myMap = new ymaps.Map("map", {
-            // Координаты центра карты.
-            // Порядок по умолчнию: «широта, долгота».
-            // Чтобы не определять координаты центра карты вручную,
-            // воспользуйтесь инструментом Определение координат.
-            center: [55.76, 37.64],
-            // Уровень масштабирования. Допустимые значения:
-            // от 0 (весь мир) до 19.
-            zoom: 7
+
+    function init () {
+
+        myMap = new ymaps.Map('map', {
+            center: [59.2116, 39.8999],
+            mzoom: 10
+        });
+        var geoMap=myMap,
+            collection=0;
+        osme.geoJSON('115106', {
+            lang: 'ru',
+            quality:0,
+            postFilter: function(region){
+                return region.osmId==1614795;
+            },
+
+        }, function (data, pure) {
+            collection = osme.toYandex(data, ymaps);
+            collection.add(geoMap);
         });
     }
-    osme.geoJSON('RU:VLG').then( function(geojson) {
-        osme.toYandex(geojson).add(myMap);
-    });
 </script>
 </html>
