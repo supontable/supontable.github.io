@@ -27,6 +27,8 @@
             zoom: 7
         });
     }
-    osme.geoJSON('RU:VLG').then( geojson => osme.toYandex(geojson).add(myMap));
+    osme.geoJSON('RU:VLG').then( function(geojson) {
+        osme.toYandex(geojson).add(myMap);
+    });
 </script>
 </html>
