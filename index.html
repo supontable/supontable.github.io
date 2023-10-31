@@ -2,14 +2,57 @@
 <html>
 <head>
     <title>Мои HTML5 билды</title>
+    <style>
+        .game-previews {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .game-preview {
+            flex: 0 0 calc(25% - 10px); /* Размер каждого превью - 25%, отступ - 10px */
+            margin: 5px; /* Отступы с каждой стороны */
+            height: 180px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Для устройств с меньшим размером экрана */
+        @media (max-width: 768px) {
+            .game-preview {
+                flex: 0 0 calc(50% - 10px); /* 2 превью на строку */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-preview {
+                flex: 0 0 100%; /* 1 превью на строку */
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Каталог моих игр на Defold</h1>
-    <ul>
-        <li><a href="builds/js-web.bigblow/LastIgnite/index.html">bigblow</a></li>
-        <li><a href="builds/js-web.psycho/LastIgnite/index.html">psycho</a></li>
-        <li><a href="builds/js-web.01.1/LastIgnite/index.html">01.1</a></li>
-        <li><a href="builds/js-web.01.2/LastIgnite/index.html">01.2</a></li>
-    </ul>
+    <div class="game-previews">
+        <div class="game-preview">
+            <iframe src="builds/js-web.bigblow/LastIgnite/index.html"></iframe>
+        </div>
+        <div class="game-preview">
+            <iframe src="builds/js-web.psycho/LastIgnite/index.html"></iframe>
+        </div>
+        <div class="game-preview">
+            <iframe src="builds/js-web.01.1/LastIgnite/index.html"></iframe>
+        </div>
+        <div class="game-preview">
+            <iframe src="builds/js-web.01.2/LastIgnite/index.html"></iframe>
+        </div>
+    </div>
 </body>
 </html>
+
